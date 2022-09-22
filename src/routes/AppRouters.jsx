@@ -1,19 +1,21 @@
-import { Routes, Route, Navigate } from 'react-router-dom';
-import { NavBar } from '../components/NavBar';
-import { Home } from '../pages/Home';
-import { About } from '../pages/About';
+import { useContext } from 'react';
+import { AuthContext } from '../context/AuthContext';
+import { PrivateRoutes } from '../privado/routes/PrivateRoutes';
+import { PublicRouter } from '../publico/routes/PublicRouter';
 
 export const AppRouters = () => {
+
+  const { isLogin } = useContext(AuthContext);
+
   return (
     <>
-    
-      <NavBar />
-
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="*" element={<Navigate to="/" />} />
-      </Routes>
+      {
+        isLogin
+        ?
+        (<PrivateRoutes />)
+        :
+        (<PublicRouter />)
+      }
     
     </>
   )

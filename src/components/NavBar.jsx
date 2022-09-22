@@ -1,6 +1,11 @@
-import { NavLink } from "react-router-dom"
+import { useContext } from 'react';
+import { NavLink } from 'react-router-dom';
+import { AuthContext } from '../context/AuthContext';
 
 export const NavBar = () => {
+
+  const { logout } = useContext(AuthContext);
+
   return (
     <header className="header">
       <nav className="nav">
@@ -9,7 +14,7 @@ export const NavBar = () => {
             ({ isActive }) => isActive
               ? "active" : ""
           }
-          to="/"
+          to="/home"
         >Home
         </NavLink>
         <NavLink
@@ -20,6 +25,12 @@ export const NavBar = () => {
           to="/about"
         >About
         </NavLink>
+        <button 
+          className='btn-logout'
+          onClick={logout}
+        >
+          Logout
+        </button>
       </nav>
     </header>
   )
