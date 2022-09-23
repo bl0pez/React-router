@@ -7,6 +7,11 @@
 
 body{ background-color: #c7c7c7;}
 
+h1{
+  font-size: 2rem;
+  color: #16001E;
+}
+
 .header{
   padding: 20px;
   background-color: #16001E;
@@ -34,4 +39,42 @@ a{
 .container{
   padding: 20px;
   text-align: center;
+}
+
+.content-center{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.btn{
+  padding: 10px 20px;
+  background-color: #006DAA;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.btn:hover{
+  background-color: #017ac0;
+}
+
+.btn-logout{
+  outline: none;
+  border: 1px solid #006DAA;
+  background: transparent;
+  color: #fff;
+  padding: 5px 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.btn-logout:hover{
+  background: #017ac0;
 }
