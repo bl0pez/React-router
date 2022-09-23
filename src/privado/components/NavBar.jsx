@@ -9,7 +9,7 @@ export const NavBar = () => {
             ({ isActive }) => isActive
               ? "active" : ""
           }
-          to="/"
+          to="/home"
         >Home
         </NavLink>
         <NavLink
@@ -20,6 +20,10 @@ export const NavBar = () => {
           to="/about"
         >About
         </NavLink>
+        <button 
+          className="btn-logout">
+          Logout
+        </button>
       </nav>
     </header>
   )
