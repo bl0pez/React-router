@@ -1,6 +1,11 @@
-import { NavLink } from "react-router-dom"
+import { useContext } from 'react';
+import { AuthContext } from "../../context/AuthContext";
+import { NavLink } from 'react-router-dom';
 
 export const NavBar = () => {
+
+  const { logout } = useContext(AuthContext);
+  
   return (
     <header className="header">
       <nav className="nav">
@@ -21,7 +26,9 @@ export const NavBar = () => {
         >About
         </NavLink>
         <button 
-          className="btn-logout">
+          className="btn-logout"
+          onClick={logout}
+          >
           Logout
         </button>
       </nav>
